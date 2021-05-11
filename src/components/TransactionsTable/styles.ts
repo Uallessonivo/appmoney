@@ -7,7 +7,7 @@ export const Container = styled.div`
         width: 100%;
         border-spacing: 0 0.5rem;
 
-        th {
+        th{
             color: var(--text-body-color);
             font-weight: 400;
             padding: 1rem 2rem;
@@ -16,7 +16,7 @@ export const Container = styled.div`
         }
 
         td {
-            padding: 1rem 2 rem;
+            padding: 1rem 2rem;
             border: 0;
             background: var(--shape);
             color: var(--text-body);
