@@ -6,6 +6,10 @@ export const Container = styled.div`
     gap: 2rem;
     margin-top: -10rem;
 
+    .text-red {
+        color: var(--red)
+    }
+
     div {
         background: var(--shape);
         padding: 1.5rem 2rem;
