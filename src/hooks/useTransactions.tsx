@@ -25,6 +25,7 @@ type TransactionInput = Omit<Transaction, "id" | "createdAt">;
 interface TransactionsContextData {
   transactions: Transaction[];
   createTransaction: (transaction: TransactionInput) => Promise<void>;
+  removeTransaction: (transaction: Transaction) => void;
 }
 
 const TransactionsContext = createContext<TransactionsContextData>(
@@ -50,8 +51,21 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     setTransactions([...transactions, transaction]);
   }
 
+  function removeTransaction(transaction: Transaction) {
+    const filteredTransaction = transactions.filter(
+      (item) => item.id !== transaction.id
+    );
+
+    setTransactions(filteredTransaction);
+    
+    const parsed = JSON.stringify(filteredTransaction);
+    localStorage.setItem("@appmoney: transaction", parsed);
+  }
+
   return (
-    <TransactionsContext.Provider value={{ transactions, createTransaction }}>
+    <TransactionsContext.Provider
+      value={{ transactions, createTransaction, removeTransaction }}
+    >
       {children}
     </TransactionsContext.Provider>
   );
