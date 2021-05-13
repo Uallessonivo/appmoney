@@ -5,9 +5,7 @@ interface Headerprops {
   onOpenNewTransactionModal: () => void;
 }
 
-export function Header({onOpenNewTransactionModal}: Headerprops) {
-
-
+export function Header({ onOpenNewTransactionModal }: Headerprops) {
   return (
     <Container>
       <Content>
@@ -15,8 +13,6 @@ export function Header({onOpenNewTransactionModal}: Headerprops) {
         <button type="button" onClick={onOpenNewTransactionModal}>
           Nova Transação
         </button>
-
-        
       </Content>
     </Container>
   );
