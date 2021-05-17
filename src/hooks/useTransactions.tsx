@@ -57,9 +57,6 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     );
 
     setTransactions(filteredTransaction);
-    
-    const parsed = JSON.stringify(filteredTransaction);
-    localStorage.setItem("@appmoney: transaction", parsed);
   }
 
   return (
